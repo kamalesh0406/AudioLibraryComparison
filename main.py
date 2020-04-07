@@ -17,9 +17,9 @@ def main():
 	essentia_load_time = essentia_test.load(args.filename)
 	torchaudio_load_time = torchaudio_test.load(args.filename)
 
-	print("Librosa Load Time", librosa_load_time)
-	print("Essentia Load Time", essentia_load_time)
-	print("TorchAudio Load Time", torchaudio_load_time)
+	print("Librosa Load Time {}s".format(librosa_load_time))
+	print("Essentia Load Time {}s".format(essentia_load_time))
+	print("TorchAudio Load Time {}s".format(torchaudio_load_time))
 
 if __name__=="__main__":
 	main()
