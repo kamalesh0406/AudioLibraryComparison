@@ -17,11 +17,11 @@ def stft(filename, n_fft, window_length, hop_length):
 	audio = loader()
 
 	w = essentia.standard.Windowing(type='hann')
-	spectrum = Spectrum(size=n_fft)
+	spectrum = essentia.standard.Spectrum(size=n_fft)
 
 	spectrogram = essentia.Pool()
 
-	for frame in FrameGenerator(audio, frameSize=window_length, hopSize=hop_length, startFromZero=True):
+	for frame in essentia.standard.FrameGenerator(audio, frameSize=window_length, hopSize=hop_length, startFromZero=True):
 		spec = spectrum(w(frame))
 		spectrogram.add("spectrogram", spec)
 	end = time.time()
